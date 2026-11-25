@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" width="960" height="360" font-family="Helvetica, Arial, 'DejaVu Sans', sans-serif">
+<defs>
+<marker id="a-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#257de0"/></marker>
+<marker id="a-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#f47230"/></marker>
+<marker id="a-grey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#777"/></marker>
+<marker id="a-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5b4bb7"/></marker>
+<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#d0d0d0" stroke-width="2"/></pattern>
+</defs>
+<rect width="960" height="360" fill="#ffffff"/>
+<text x="480.0" y="30" font-size="17" fill="#1a1a1a" text-anchor="middle" font-weight="bold" font-style="normal">How the tensor shapes line up</text>
+<text x="480.0" y="52" font-size="12.5" fill="#555555" text-anchor="middle" font-weight="normal" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">(batch_size, n_tokens, vocab_size) = (4, 18, 50257)</text>
+<rect x="30" y="90" width="180" height="58" rx="8" fill="#eaf2fd" stroke="#257de0" stroke-width="1.5"/>
+<text x="120.0" y="114" font-size="13" fill="#1b5fae" text-anchor="middle" font-weight="bold" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">log_probs</text>
+<text x="120.0" y="134" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="normal" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">(4, 18, 50257)</text>
+<line x1="212" y1="119" x2="300" y2="119" stroke="#257de0" stroke-width="1.8" marker-end="url(#a-blue)"/>
+<text x="256.0" y="111.0" font-size="12" fill="#1a1a1a" text-anchor="middle" font-weight="normal" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">[:, :-1, :]</text>
+<rect x="304" y="90" width="180" height="58" rx="8" fill="#eaf2fd" stroke="#257de0" stroke-width="1.5"/>
+<text x="394.0" y="114" font-size="13" fill="#1b5fae" text-anchor="middle" font-weight="bold" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">drop last position</text>
+<text x="394.0" y="134" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="normal" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">(4, 17, 50257)</text>
+<rect x="30" y="230" width="180" height="58" rx="8" fill="#fef0e7" stroke="#f47230" stroke-width="1.5"/>
+<text x="120.0" y="254" font-size="13" fill="#b9501c" text-anchor="middle" font-weight="bold" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">target_ids</text>
+<text x="120.0" y="274" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="normal" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">(4, 17)</text>
+<line x1="212" y1="259" x2="300" y2="259" stroke="#f47230" stroke-width="1.8" marker-end="url(#a-orange)"/>
+<text x="256.0" y="251.0" font-size="12" fill="#1a1a1a" text-anchor="middle" font-weight="normal" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">[:, :, None]</text>
+<rect x="304" y="230" width="180" height="58" rx="8" fill="#fef0e7" stroke="#f47230" stroke-width="1.5"/>
+<text x="394.0" y="254" font-size="13" fill="#b9501c" text-anchor="middle" font-weight="bold" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">add a vocab axis</text>
+<text x="394.0" y="274" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="normal" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">(4, 17, 1)</text>
+<line x1="486" y1="119" x2="556" y2="178" stroke="#257de0" stroke-width="1.8" marker-end="url(#a-blue)"/>
+<line x1="486" y1="259" x2="556" y2="200" stroke="#f47230" stroke-width="1.8" marker-end="url(#a-orange)"/>
+<text x="532" y="136" font-size="11.5" fill="#1b5fae" text-anchor="start" font-weight="normal" font-style="italic">values</text>
+<text x="532" y="252" font-size="11.5" fill="#b9501c" text-anchor="start" font-weight="normal" font-style="italic">index</text>
+<rect x="560" y="160" width="170" height="58" rx="8" fill="#f2f0fa" stroke="#5b4bb7" stroke-width="1.5"/>
+<text x="645.0" y="184" font-size="13" fill="#5b4bb7" text-anchor="middle" font-weight="bold" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">.gather(dim=-1)</text>
+<text x="645.0" y="204" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="normal" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">(4, 17, 1)</text>
+<line x1="645" y1="220" x2="645" y2="268" stroke="#5b4bb7" stroke-width="1.8" marker-end="url(#a-purple)"/>
+<text x="645.0" y="236.0" font-size="12" fill="#1a1a1a" text-anchor="middle" font-weight="normal" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace"></text>
+<text x="655" y="248" font-size="12" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">.squeeze(-1)</text>
+<rect x="560" y="272" width="170" height="58" rx="8" fill="#f2f0fa" stroke="#5b4bb7" stroke-width="1.5"/>
+<text x="645.0" y="296" font-size="13" fill="#5b4bb7" text-anchor="middle" font-weight="bold" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">token_logps</text>
+<text x="645.0" y="316" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="normal" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">(4, 17), nats</text>
+<line x1="732" y1="301" x2="782" y2="301" stroke="#5b4bb7" stroke-width="1.8" marker-end="url(#a-purple)"/>
+<text x="757.0" y="293.0" font-size="12" fill="#1a1a1a" text-anchor="middle" font-weight="normal" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace"></text>
+<text x="757" y="291" font-size="12" fill="#5b4bb7" text-anchor="middle" font-weight="normal" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">÷ ln 2</text>
+<rect x="786" y="272" width="160" height="58" rx="8" fill="#f2f0fa" stroke="#5b4bb7" stroke-width="1.5"/>
+<text x="866" y="296" font-size="13" fill="#5b4bb7" text-anchor="middle" font-weight="bold" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">token_logps</text>
+<text x="866" y="316" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="normal" font-style="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">(4, 17), bits</text>
+<text x="645" y="138" font-size="11.5" fill="#555555" text-anchor="middle" font-weight="normal" font-style="normal">one log prob per</text>
+<text x="645" y="152" font-size="11.5" fill="#555555" text-anchor="middle" font-weight="normal" font-style="normal">(sentence, position)</text>
+</svg>
